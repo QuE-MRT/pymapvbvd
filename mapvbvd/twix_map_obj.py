@@ -754,7 +754,7 @@ class twix_map_obj:
 
         fid = self._fileopen()
 
-        for k in trange(kMax, desc='read data', leave=False):  # could loop over mem, but keep it similar to matlab
+        for k in trange(kMax, desc='Read data', leave=True):  # could loop over mem, but keep it similar to matlab
             # skip scan header
             fid.seek(mem[k] + szScanHeader, 0)
             raw = np.fromfile(fid, dtype=np.float32, count=readSize.prod()).reshape(

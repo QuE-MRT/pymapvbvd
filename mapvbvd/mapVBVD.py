@@ -71,7 +71,7 @@ def loop_mdh_read(fid, version, Nscans, scan, measOffset, measLength, print_prog
     if print_prog:
         last_progress = 0
         t = tqdm(total=measLength, unit='B', unit_scale=True, unit_divisor=1024,
-                 desc='Scan %d/%d, read all mdhs' % (scan + 1, Nscans), leave=False,
+                 desc='Scan %d/%d, read all mdhs' % (scan + 1, Nscans), leave=True,
                  file=stdout)
     while True:
         #         Read mdh as binary (uint8) and evaluate as little as possible to know...
